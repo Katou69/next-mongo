@@ -7,7 +7,7 @@ export default function Home() {
   const [category, setCategory] = useState([]);
   const { register, handleSubmit } = useForm();
   async function fetchCategory() {
-    const data = await fetch(NEXT_PUBLIC_API_BASE);
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/category`);
     const c = await data.json();
     setCategory(c);
   }
